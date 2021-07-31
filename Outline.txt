@@ -1,0 +1,35 @@
+Stock Price Data Collection:
+
+1. List of CSV stocks to collect daily data from. 
+2. If data has not been collected, collects the data in a rate limited fashion to prevent blocking. 
+3. Data is collected once a week for all stocks, every day for any stocks in play.
+
+Each stock gets its own data in it's own folder. 
+
+Updates all stock data at EOD. 
+
+
+Data Processing:
+
+1. List of stocks in csv file, shows whether they have been modeled, and if so when. 
+2. Queue of stocks to be modeled. 
+3. Program that adds models to the queue.
+    This program:
+        a. Starts with best X reccomendations, based on top ROI list and stock that are in play.
+        b. then searches new stocks based on consistancy?? (run an Adj. R^2 on just the stock for all time, sort by highest)
+
+
+Preprocessing:
+1. Composes data to be used to make an analysis. 
+2. Uses adjusted R^2 value to rank incoming data. 
+3. Creates a Delta adjusted R^2 table to rank data. 
+4. Searches adding additional data combinations ?randomly? to find better fits.
+
+Predictive Analysis:
+1. Finds the best model for a given stock
+2. Creates that model
+3. Saves it in the folder with the stock.
+
+Create Recomendations:
+1. Uses created models to calculate ROI
+
